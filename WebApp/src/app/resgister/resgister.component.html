@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <div class="card">"
+      <div class="col s6">
+        <h2>Quiz Registration</h2>
+      </div>
+      <div class="col s6">
+        <img src="assets/img/1.png" style="width:250px;height:250px;" class="offset-s3">
+      </div>
+      <div class="card-content">
+        <form #form="ngForm" (ngSubmit)="OnSubmit(Name.value,Email.value)" >
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input type="text" name="Name" #Name="ngModel" [(ngModel)]="bc" required>
+              <label> Name </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mail_outline</i>
+              <input type="email" name="Email" #Email="ngModel" [(ngModel)]="aa" [pattern]="emailPattern" required>
+              <label> E-mail </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn-large btn-submit" [disabled]="!form.valid" type="submit">Start</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
